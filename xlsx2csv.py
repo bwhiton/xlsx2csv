@@ -226,7 +226,7 @@ class Xlsx2csv:
             outfile = open(outfile, 'w+')
             closefile = True
         try:
-            writer = csv.writer(outfile, quoting=csv.QUOTE_MINIMAL, delimiter=self.options['delimiter'], lineterminator=os.linesep)
+            writer = csv.writer(outfile, quoting=csv.QUOTE_ALL, delimiter=self.options['delimiter'], lineterminator=os.linesep)
             sheetfile = self._filehandle("xl/worksheets/sheet%i.xml" % sheetid)
             if not sheetfile and sheetid == 1:
                 sheetfile = self._filehandle("xl/worksheets/sheet.xml")
